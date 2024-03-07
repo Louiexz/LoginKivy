@@ -1,0 +1,68 @@
+<LoginScreen>:
+    orientation: "vertical"
+    spacing: 10
+    padding: 20
+    size: 400, 400
+
+    Image:
+        source: app.image_source
+
+    Label:
+        text: "Alerta furto"
+        font_size: "24sp"
+        color: (2, 2, 0, 2)
+
+    Entrada:
+        Label:
+            text: "Seu usuário:"
+
+        TextInput:
+            id: usuario
+
+    Entrada:
+        Label:
+            text: "Sua senha:"
+            halign: "right"
+
+        TextInput:
+            password: True
+            id: senha
+
+    Entrada:
+        Label:
+            text: "Seu email:"
+            align: "right"
+            halign: "center"
+        TextInput:
+            id: email
+
+    BoxLayout:
+        Funcao:
+            text: "Entrar"
+            on_press: root.on_entrar()
+
+        Funcao:
+            text: "Esqueci a Senha"
+            on_press: root.on_esqueci_senha()
+            background_color: 0, 0, 0, 0.9
+            color: 1, 0, 0, 1
+
+    BoxLayout:
+        Funcao:
+            text: "Cadastre-se"
+            on_press: root.on_novo_usuario()
+
+<Entrada@BoxLayout>:
+    orientation: "horizontal"
+
+<Funcao@Button>:
+    color: (1, 1, 1, 1)
+    font_size: "16sp"
+
+<Label@Label>:
+    font_size: "18sp"
+    halign: "right"
+
+<TextInput@TextInput>:
+    multiline: False
+    halign: "center"
