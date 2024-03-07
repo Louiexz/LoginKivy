@@ -1,2 +1,2 @@
 # LoginKivy
-Tela de login e registro usandi kivy, feito em uma interface simples.
+Tela de login e registro de conta utilizando kivy, feito em uma interface simples.
