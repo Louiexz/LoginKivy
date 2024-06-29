@@ -1,23 +1,27 @@
 import smtplib
 import random
 from email.mime.text import MIMEText
+from .tratarJson import Users
 
-#senha = "suasenhaaqui"
+filename = "assets/json/conta.json"
 
 class Email:
 	@classmethod
-	def conectaEmail(cls, mail=False, senha=False):
-		if mail:
+	def conectaEmail(cls):
+		user = Users
+		data = user.loadData(filename=filename)
+
+		if data:
 			servidor = smtplib.SMTP('smtp.gmail.com', 587)
 			servidor.starttls()
-			servidor.login(mail, senha)
+			servidor.login(data["admin"][0], data["admin"][1])
 
 			return servidor
 		else: return False
 
 	@classmethod
 	def enviaEmail(cls, dados):
-		servidor = cls.conectaEmail()#"seuemailaqui")
+		servidor = cls.conectaEmail()
 
 		if servidor:
 			servidor.sendmail(dados[0], dados[1], dados[2])

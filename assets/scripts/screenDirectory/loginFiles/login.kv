@@ -1,0 +1,68 @@
+<Login>:
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 10
+        padding: 20
+        size: 400, 400
+
+        Image:
+            source: "./assets/images/alerta.png"
+
+        Label:
+            text: "Alerta furto"
+            font_size: "24sp"
+            color: 1, 1, 0, 1  # Example of setting color with RGBA values
+
+        Entrada:
+            Label:
+                text: "Seu usuário:"
+
+            TextInput:
+                id: usuario
+
+        Entrada:
+            Label:
+                text: "Sua senha:"
+                halign: "right"
+
+            TextInput:
+                password: True
+                id: senha
+
+        Entrada:
+            Label:
+                text: "Seu email:"
+                align: "right"
+                halign: "center"
+
+            TextInput:
+                id: email
+
+        Funcao:
+            text: "Entrar"
+            on_press: root.on_entrar(); app.root.current = "home"
+
+        Funcao:
+            text: "Esqueci a Senha"
+            on_press: root.on_forgot_password()
+            background_color: 0, 0, 0, 0.9
+            color: 1, 0, 0, 1
+
+        Funcao:
+            text: "Cadastre-se"
+            on_press: root.on_new_user()
+
+<Entrada@BoxLayout>:
+    orientation: "horizontal"
+
+<Funcao@Button>:
+    color: (1, 1, 1, 1)
+    font_size: "16sp"
+
+<Label@Label>:
+    font_size: "18sp"
+    halign: "right"
+
+<TextInput@TextInput>:
+    multiline: False
+    halign: "center"

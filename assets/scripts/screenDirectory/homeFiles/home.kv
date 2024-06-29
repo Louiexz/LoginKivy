@@ -1,0 +1,18 @@
+# Conteúdo do arquivo home.kv
+
+<Home>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Welcome to Future Home Screen"
+            font_size: "24sp"
+            color: 1, 1, 0, 1  # Cor amarela
+
+        Button:
+            text: 'Go to Login'
+            on_press: root.go_to_login()
+
+<Label@Label>:
+    font_size: "18sp"
+    halign: "right"
