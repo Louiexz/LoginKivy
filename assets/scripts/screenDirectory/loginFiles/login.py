@@ -7,30 +7,31 @@ from ...functs.tratarJson import Users
 from ...functs.account import Email
 
 class Login(BoxLayout):
-    def __init__(self, **kwargs):
+    def __init__(self, wm, **kwargs):
         super().__init__(**kwargs)
+        self.wm = wm
     
-    def go_to_home(self):
-        self.manager.current = 'home'
-    
-    def pegaDados(self):
+    def pega_dados(self):
         return [self.ids[x].text for x in ["usuario", "senha", "email"]]
-
+    
     def on_entrar(self):
-        if Users.validUser(self.pegaDados()): print("Usuário válido!")
-        else: print("Usuário inválido, cadastre-se!")
+        if Users.valid_user(self.pega_dados()):
+            print("Usuário válido!")
+            self.wm.current = 'home'
+        
+    def on_valid(self): pass
 
     def on_forgot_password(self):
-        dados = self.pegaDados()
+        dados = self.pega_dados()
 
-        if Users.validUser(dados):
+        if Users.valid_user(dados):
             try:
-                if Email.redefinirSenha(dados): print("Código enviado com sucesso!")
+                if Email.redefinir_senha(dados): print("Código enviado com sucesso!")
             except Exception as a: print(f'Email não enviado por: {a} motivo')
         else: print("Preencha todos os campos.")
     
     def on_new_user(self):
-        retorno = Users.registerUser(self.pegaDados())
+        retorno = Users.register_user(self.pega_dados())
 
         if retorno == True: print('Usuário já registrado.')
         elif retorno == "erro": print("Preencha todos os campos.")
