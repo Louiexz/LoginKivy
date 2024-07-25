@@ -1,6 +1,6 @@
 # LoginKivy
 
-!["Alerta Furto"]('alerta_furto.png')
+!["Alerta Furto"](alerta_furto.png)
 
 Aplicativo "Alerta Furto" criado utilizando kivy, com interface simples.
 
