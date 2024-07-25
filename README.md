@@ -6,7 +6,9 @@ Aplicativo "Alerta Furto" criado utilizando kivy, com interface simples.
 
 ## Funcionalidades
 
-    Use os operadores básicos e calcule suas contas.
+    Registre-se na aplicação.
+    Faça login.
+    Requesite uma nova senha.
 
 ## Pré-requisitos
 
@@ -59,14 +61,3 @@ Aplicativo "Alerta Furto" criado utilizando kivy, com interface simples.
 Louiexz - Autor e Desenvolvedor da Alerta Furto<br>
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
-- main.py
-- screenapp.kv
-- assets/
-  - scripts/
-    - screenDirectory/
-      - loginFiles/
-        - login.py
-        - login.kv
-      - homeFiles/
-        - home.py
-        - home.kv
